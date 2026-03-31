@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dignity Practice — Human Rights Advisory & Organizational Dignity</title>
+  <meta name="description" content="Louise Cuvillier is a human rights adviser, IHL specialist, and organizational dignity consultant based in Gothenburg, Sweden. Founder of The Dignity Practice and Cuvillier Advisory.">
+  <meta name="keywords" content="human rights adviser Sweden, IHL consultant, Ukraine EU accession, organizational dignity, nonviolent communication, Cuvillier Advisory, The Dignity Practice, human rights training, Louise Cuvillier">
+  <meta name="author" content="Louise Cuvillier">
+  <meta property="og:title" content="The Dignity Practice — Louise Cuvillier">
+  <meta property="og:description" content="Human rights expertise, organizational dignity, and hope-based advisory. Founded by Louise Cuvillier, Gothenburg Sweden.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thedignitypractive.com">
+  <link rel="canonical" href="https://thedignitypractive.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAF8F4;
+      --cream-dark: #F0EBE1;
+      --warm-white: #FEFCF9;
+      --blue: #6E9DC2;
+      --blue-dark: #4A7A9B;
+      --blue-pale: #D6E8F4;
+      --ochre: #C9974A;
+      --ochre-pale: #F5E8D0;
+      --yellow: #E8C84A;
+      --yellow-pale: #FBF3CC;
+      --brown: #3A2E28;
+      --brown-mid: #7A6A60;
+      --mid: #9A8880;
+      --line: rgba(110,157,194,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--brown); font-weight: 300; line-height: 1.8; font-size: 16px; }
+
+    /* LANGUAGE SYSTEM — only show active language */
+    .en, .sv, .fr, .uk { display: none; }
+    body.lang-en .en { display: revert; }
+    body.lang-sv .sv { display: revert; }
+    body.lang-fr .fr { display: revert; }
+    body.lang-uk .uk { display: revert; }
+    /* Inline spans need inline display */
+    span.en, span.sv, span.fr, span.uk { display: none; }
+    body.lang-en span.en { display: inline; }
+    body.lang-sv span.sv { display: inline; }
+    body.lang-fr span.fr { display: inline; }
+    body.lang-uk span.uk { display: inline; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 5rem;
+      background: rgba(250,248,244,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.1em; color: var(--brown); text-decoration: none; text-transform: uppercase; }
+    .nav-logo span { color: var(--blue); font-weight: 300; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--blue); }
+    .lang-toggle { display: flex; gap: 0.3rem; margin-left: 1rem; }
+    .lang-btn { font-size: 0.68rem; letter-spacing: 0.08em; padding: 0.28rem 0.6rem; border: 1px solid var(--blue); background: none; cursor: pointer; color: var(--blue); transition: all 0.3s; font-family: 'Jost', sans-serif; }
+    .lang-btn.active { background: var(--blue); color: white; }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 5rem; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 6rem 5rem; background: var(--warm-white); }
+    .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem; }
+    .yellow-dot { width: 9px; height: 9px; background: var(--yellow); border-radius: 50%; flex-shrink: 0; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5rem); line-height: 1.05; font-weight: 300; color: var(--brown); margin-bottom: 2rem; }
+    .hero-title em { font-style: italic; color: var(--blue); }
+    .hero-sub { font-size: 1.05rem; color: var(--brown-mid); max-width: 40ch; margin-bottom: 3rem; line-height: 1.9; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    .hero-right { position: relative; overflow: hidden; min-height: 600px; }
+    .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: sepia(10%) brightness(0.95) saturate(0.9); display: block; }
+    .hero-quote-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(58,46,40,0.85) 0%, transparent 100%); padding: 3rem 3rem 2.5rem; }
+    .hero-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; font-weight: 300; color: var(--cream); line-height: 1.5; margin-bottom: 0.6rem; }
+    .hero-quote-attr { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,248,244,0.6); }
+
+    /* BUTTONS */
+    .btn-primary { display: inline-flex; align-items: center; background: var(--brown); color: var(--cream); padding: 1rem 2.2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; font-family: 'Jost', sans-serif; }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-outline { display: inline-flex; align-items: center; background: transparent; color: var(--blue); padding: 1rem 2.2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--blue); transition: all 0.3s; font-family: 'Jost', sans-serif; }
+    .btn-outline:hover { background: var(--blue); color: white; }
+    .btn-blue { display: inline-flex; align-items: center; background: var(--blue); color: white; padding: 1rem 2.2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; font-family: 'Jost', sans-serif; }
+    .btn-blue:hover { background: var(--blue-dark); }
+    .btn-white { display: inline-block; background: white; color: var(--blue-dark); padding: 1rem 2.5rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; font-family: 'Jost', sans-serif; }
+    .btn-white:hover { background: var(--yellow); color: var(--brown); }
+
+    /* MARQUEE */
+    .marquee-strip { background: var(--brown); padding: 1rem 0; overflow: hidden; }
+    .marquee-inner { display: flex; gap: 4rem; white-space: nowrap; animation: marquee 35s linear infinite; }
+    .marquee-item { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,248,244,0.65); flex-shrink: 0; }
+    .marquee-dot { color: var(--yellow); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* SECTIONS */
+    section { padding: 8rem 5rem; }
+    .section-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; }
+    .section-label::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--blue); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 300; line-height: 1.15; color: var(--brown); margin-bottom: 2rem; }
+
+    /* WHY */
+    .why { background: var(--cream-dark); display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+    .why-body { font-size: 1.05rem; color: var(--brown-mid); line-height: 1.9; margin-bottom: 1.5rem; }
+    .stats { display: flex; flex-direction: column; gap: 2rem; }
+    .stat { border-left: 3px solid var(--blue-pale); padding-left: 2rem; }
+    .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: var(--blue); line-height: 1; }
+    .stat-label { font-size: 0.92rem; color: var(--brown-mid); line-height: 1.6; margin-top: 0.3rem; }
+
+    /* SERVICES */
+    .services { background: var(--warm-white); }
+    .services-hook { font-size: 1.1rem; color: var(--brown-mid); max-width: 70ch; line-height: 1.8; margin-bottom: 3rem; }
+    .tabs-nav { display: flex; border-bottom: 2px solid var(--blue-pale); }
+    .tab-btn { padding: 1.1rem 2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; background: none; border: none; cursor: pointer; color: var(--mid); transition: all 0.3s; position: relative; font-family: 'Jost', sans-serif; }
+    .tab-btn.active { color: var(--brown); }
+    .tab-btn.active::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--blue); }
+    .tab-btn:hover { color: var(--blue); }
+    .tab-panel { display: none; padding: 4rem 0; }
+    .tab-panel.active { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
+    .tab-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--brown); margin-bottom: 1.5rem; line-height: 1.2; }
+    .tab-body { font-size: 1rem; color: var(--brown-mid); line-height: 1.9; margin-bottom: 1.2rem; }
+    .tab-engage { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 2.5rem; display: block; font-style: italic; }
+    .deliverables { display: flex; flex-direction: column; gap: 0.6rem; }
+    .deliverable { padding: 1.4rem 1.6rem; background: var(--cream); border-left: 3px solid var(--blue-pale); transition: border-color 0.3s; }
+    .deliverable:hover { border-left-color: var(--blue); }
+    .deliverable-title { font-size: 0.92rem; font-weight: 500; color: var(--brown); margin-bottom: 0.4rem; }
+    .deliverable-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.6; }
+
+    /* SPEAKING PHOTO */
+    .photo-speaking { position: relative; height: 500px; overflow: hidden; background: var(--cream-dark); }
+    .photo-speaking img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: sepia(15%) brightness(0.88) saturate(0.8); display: block; }
+    .photo-speaking-overlay { position: absolute; inset: 0; background: rgba(58,46,40,0.52); display: flex; align-items: center; justify-content: center; }
+    .photo-speaking-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 3rem); font-style: italic; color: white; text-align: center; max-width: 65ch; line-height: 1.4; padding: 2rem; }
+    .photo-speaking-text strong { font-style: normal; border-bottom: 2px solid var(--yellow); padding-bottom: 2px; }
+
+    /* MID CTA */
+    .mid-cta { background: var(--yellow-pale); padding: 5rem; display: flex; justify-content: space-between; align-items: center; gap: 3rem; border-top: 3px solid var(--yellow); border-bottom: 3px solid var(--yellow); }
+    .mid-cta-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.5vw, 2.4rem); color: var(--brown); font-weight: 300; font-style: italic; max-width: 55ch; line-height: 1.4; }
+    .mid-cta-text strong { font-style: normal; font-weight: 600; color: var(--blue-dark); }
+
+    /* ABOUT */
+    .about { background: var(--cream); display: grid; grid-template-columns: 1fr 1.3fr; gap: 8rem; align-items: center; }
+    .about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; filter: sepia(8%) brightness(0.97) contrast(1.02); display: block; }
+    .about-body { font-size: 1rem; color: var(--brown-mid); line-height: 1.9; margin-bottom: 2rem; }
+    .credentials { display: flex; flex-direction: column; }
+    .credential { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .credential-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 0.7rem; }
+    .credential-text { font-size: 0.9rem; color: var(--brown-mid); line-height: 1.6; }
+    .credential-text strong { color: var(--brown); }
+
+    /* TESTIMONIAL */
+    .testimonial { background: var(--blue-pale); padding: 7rem 5rem; text-align: center; }
+    .testimonial-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-style: italic; font-weight: 300; color: var(--brown); max-width: 65ch; margin: 0 auto 1.5rem; line-height: 1.5; }
+    .testimonial-attr { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-dark); }
+
+    /* WORKSHOP PHOTO */
+    .photo-workshop { position: relative; height: 420px; overflow: hidden; background: var(--cream-dark); }
+    .photo-workshop img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: sepia(12%) brightness(0.93) saturate(0.85); display: block; }
+    .photo-workshop-caption { position: absolute; bottom: 2rem; right: 2rem; background: rgba(250,248,244,0.92); padding: 1rem 1.5rem; font-size: 0.82rem; color: var(--brown); max-width: 32ch; text-align: right; font-style: italic; line-height: 1.5; }
+
+    /* WRITING */
+    .writing { background: var(--cream-dark); }
+    .writing-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: center; }
+    .post-card { background: var(--warm-white); padding: 3rem; border-top: 3px solid var(--blue); }
+    .post-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+    .post-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--brown); margin-bottom: 1.2rem; line-height: 1.3; }
+    .post-excerpt { font-size: 0.95rem; color: var(--brown-mid); line-height: 1.9; margin-bottom: 2rem; }
+    .post-link { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); text-decoration: none; transition: color 0.3s; }
+    .post-link:hover { color: var(--brown); }
+
+    /* APPROACH */
+    .approach { background: var(--warm-white); }
+    .approach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; margin-top: 3rem; }
+    .approach-item { padding: 3rem; background: var(--cream); }
+    .approach-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--blue-pale); line-height: 1; margin-bottom: 1.2rem; }
+    .approach-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--brown); margin-bottom: 1rem; }
+    .approach-body { font-size: 0.95rem; color: var(--brown-mid); line-height: 1.8; }
+
+    /* OCHRE ACCENT BAND */
+    .ochre-band { background: var(--ochre-pale); border-top: 3px solid var(--ochre); border-bottom: 3px solid var(--ochre); padding: 4rem 5rem; text-align: center; }
+    .ochre-band-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.2vw, 2rem); color: var(--brown); font-style: italic; max-width: 60ch; margin: 0 auto; line-height: 1.6; }
+    .ochre-band-text strong { font-style: normal; color: var(--ochre); }
+
+    /* CONTACT — blue background */
+    .contact { background: var(--blue-dark); display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center; }
+    .contact .section-label { color: rgba(214,232,244,0.7); }
+    .contact .section-label::before { background: rgba(214,232,244,0.7); }
+    .contact-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; color: white; line-height: 1.2; margin-bottom: 1.5rem; }
+    .contact-title em { font-style: italic; color: var(--yellow); }
+    .contact-body { color: rgba(255,255,255,0.85); line-height: 1.9; margin-bottom: 2.5rem; font-size: 1rem; }
+    .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-detail-item { color: rgba(255,255,255,0.85); font-size: 1rem; }
+    .contact-detail-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; }
+
+    /* FOOTER */
+    footer { background: var(--brown); padding: 2.5rem 5rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(250,248,244,0.5); }
+    .footer-links { display: flex; gap: 2.5rem; }
+    .footer-links a { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,248,244,0.35); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--blue-pale); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav { padding: 1rem 2rem; }
+      .nav-links { display: none; }
+      .hero, .why, .tab-panel.active, .about, .writing-inner, .contact { grid-template-columns: 1fr !important; gap: 3rem; }
+      .hero-right { min-height: 55vw; }
+      .hero-left { padding: 4rem 2rem; }
+      section { padding: 5rem 2rem; }
+      .mid-cta, .ochre-band { flex-direction: column; text-align: center; padding: 4rem 2rem; }
+      .approach-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .photo-speaking, .photo-workshop { height: 300px; }
+      .testimonial { padding: 5rem 2rem; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+<nav>
+  <a href="#" class="nav-logo">THE DIGNITY <span>PRACTICE</span></a>
+  <ul class="nav-links">
+    <li><a href="#services"><span class="en">Services</span><span class="sv">Tjänster</span><span class="fr">Services</span><span class="uk">Послуги</span></a></li>
+    <li><a href="#about"><span class="en">About</span><span class="sv">Om</span><span class="fr">À propos</span><span class="uk">Про нас</span></a></li>
+    <li><a href="#writing"><span class="en">Writing</span><span class="sv">Skrivande</span><span class="fr">Écrits</span><span class="uk">Публікації</span></a></li>
+    <li><a href="#contact"><span class="en">Contact</span><span class="sv">Kontakt</span><span class="fr">Contact</span><span class="uk">Контакт</span></a></li>
+    <li>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+        <button class="lang-btn" onclick="setLang('sv',this)">SE</button>
+        <button class="lang-btn" onclick="setLang('fr',this)">FR</button>
+        <button class="lang-btn" onclick="setLang('uk',this)">UA</button>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow"><span class="yellow-dot"></span>Human Rights · Dignity · Hope</p>
+    <h1 class="hero-title">
+      <span class="en">Where human rights<br>expertise meets<br><em>organizational soul.</em></span>
+      <span class="sv">Där mänskliga rättigheter<br>möter <em>organisationens själ.</em></span>
+      <span class="fr">Là où l'expertise en droits<br>humains rencontre<br><em>l'âme des organisations.</em></span>
+      <span class="uk">Де експертиза з прав людини<br>зустрічає <em>душу організації.</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span class="en">The Dignity Practice helps organizations, institutions, and individuals work with greater humanity — building the trust, clarity, and purpose that make real impact possible.</span>
+      <span class="sv">The Dignity Practice hjälper organisationer, institutioner och individer att arbeta med större mänsklighet — och bygga det förtroende som skapar verklig förändring.</span>
+      <span class="fr">The Dignity Practice aide les organisations, institutions et individus à travailler avec plus d'humanité — en construisant la confiance, la clarté et l'objectif qui rendent un impact réel possible.</span>
+      <span class="uk">The Dignity Practice допомагає організаціям, установам та особам працювати з більшою людяністю — будуючи довіру, ясність і мету, що уможливлюють реальний вплив.</span>
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <span class="en">Let's work together</span>
+        <span class="sv">Låt oss samarbeta</span>
+        <span class="fr">Travaillons ensemble</span>
+        <span class="uk">Працюймо разом</span>
+      </a>
+      <a href="#services" class="btn-outline">
+        <span class="en">Our services →</span>
+        <span class="sv">Våra tjänster →</span>
+        <span class="fr">Nos services →</span>
+        <span class="uk">Наші послуги →</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-photo" src="photo_networking.jpg" alt="Louise Cuvillier in conversation at a conference" onerror="this.style.display='none'">
+    <div class="hero-quote-overlay">
+      <blockquote class="hero-quote">
+        <span class="en">"Genuine social sustainability is not a report to file, but a culture to build."</span>
+        <span class="sv">"Äkta social hållbarhet är inte en rapport att lämna in, utan en kultur att bygga."</span>
+        <span class="fr">"La durabilité sociale authentique n'est pas un rapport à déposer, mais une culture à construire."</span>
+        <span class="uk">"Справжня соціальна сталість — це не звіт для подання, а культура для побудови."</span>
+      </blockquote>
+      <p class="hero-quote-attr">— Louise Cuvillier, The Dignity Practice</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">Human Rights Advisory <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Organizational Dignity <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Ukraine & EU Accession <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Nonviolent Communication <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Children's Rights <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">International Humanitarian Law <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Hope-Based Leadership <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Policy Writing & Speaking <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Human Rights Advisory <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Organizational Dignity <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Ukraine & EU Accession <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Nonviolent Communication <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Children's Rights <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">International Humanitarian Law <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Hope-Based Leadership <span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Policy Writing & Speaking <span class="marquee-dot">·</span></span>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="why">
+  <div>
+    <p class="section-label">
+      <span class="en">Why this work matters</span>
+      <span class="sv">Varför detta arbete spelar roll</span>
+      <span class="fr">Pourquoi ce travail compte</span>
+      <span class="uk">Чому ця робота важлива</span>
+    </p>
+    <h2 class="section-title">
+      <span class="en">When people feel dignified,<br><em>organizations come alive.</em></span>
+      <span class="sv">När människor känner sig värdiga,<br><em>vaknar organisationer till liv.</em></span>
+      <span class="fr">Quand les personnes se sentent dignes,<br><em>les organisations s'éveillent.</em></span>
+      <span class="uk">Коли люди відчувають гідність,<br><em>організації оживають.</em></span>
+    </h2>
+    <p class="why-body en">We are living through a crisis of disconnection. Polarization. Distrust. Cultures where people go through the motions without meaning. And yet — everywhere — there are glimpses of what becomes possible when dignity is restored.</p>
+    <p class="why-body sv">Vi lever i en kris av frånkoppling. Polarisering. Misstro. Kulturer där människor går igenom rörelserna utan mening. Och ändå — överallt — finns det glimtar av vad som blir möjligt när värdighet återställs.</p>
+    <p class="why-body fr">Nous traversons une crise de déconnexion. Polarisation. Méfiance. Des cultures où les gens font semblant sans signification. Et pourtant — partout — il y a des aperçus de ce qui devient possible quand la dignité est restaurée.</p>
+    <p class="why-body uk">Ми переживаємо кризу відчуження. Поляризацію. Недовіру. Культури, де люди виконують рухи без сенсу. І все ж — скрізь — є проблиски того, що стає можливим, коли гідність відновлюється.</p>
+    <p class="why-body en" style="margin-bottom:2.5rem;">The Dignity Practice exists in that gap. Between where organizations are and where they could be.</p>
+    <p class="why-body sv" style="margin-bottom:2.5rem;">The Dignity Practice finns i det gapet. Mellan var organisationer är och var de kan vara.</p>
+    <p class="why-body fr" style="margin-bottom:2.5rem;">The Dignity Practice existe dans cet écart. Entre où sont les organisations et où elles pourraient être.</p>
+    <p class="why-body uk" style="margin-bottom:2.5rem;">The Dignity Practice існує в цьому проміжку. Між тим, де організації є, і тим, де вони могли б бути.</p>
+    <a href="#contact" class="btn-blue">
+      <span class="en">Start the conversation</span>
+      <span class="sv">Starta samtalet</span>
+      <span class="fr">Commencer la conversation</span>
+      <span class="uk">Розпочати розмову</span>
+    </a>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">11+</div>
+      <div class="stat-label">
+        <span class="en">Years of field experience across Sweden, Ukraine, Switzerland & the US</span>
+        <span class="sv">Års fälterfarenhet i Sverige, Ukraina, Schweiz & USA</span>
+        <span class="fr">Ans d'expérience terrain en Suède, Ukraine, Suisse & États-Unis</span>
+        <span class="uk">Років польового досвіду у Швеції, Україні, Швейцарії та США</span>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">1000+</div>
+      <div class="stat-label">
+        <span class="en">Individuals trained in human rights, IHL, trauma support & NVC</span>
+        <span class="sv">Individer utbildade i mänskliga rättigheter, IHL, traumastöd & NVC</span>
+        <span class="fr">Personnes formées en droits humains, DIH, soutien traumatique & CNV</span>
+        <span class="uk">Осіб навчено з прав людини, МГП, підтримки при травмі та НКС</span>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">
+        <span class="en">Advocacy reports integrated into EU and international dialogues</span>
+        <span class="sv">Påverkansrapporter integrerade i EU och internationella dialoger</span>
+        <span class="fr">Rapports de plaidoyer intégrés dans les dialogues européens et internationaux</span>
+        <span class="uk">Адвокаційних звітів інтегровано в діалоги ЄС та міжнародні процеси</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <p class="section-label">
+    <span class="en">What we offer</span>
+    <span class="sv">Vad vi erbjuder</span>
+    <span class="fr">Ce que nous offrons</span>
+    <span class="uk">Що ми пропонуємо</span>
+  </p>
+  <h2 class="section-title">
+    <span class="en">Whether you need to rebuild trust, advance human rights, or find the right words —</span>
+    <span class="sv">Oavsett om du behöver återuppbygga förtroende, stärka mänskliga rättigheter eller hitta de rätta orden —</span>
+    <span class="fr">Que vous ayez besoin de reconstruire la confiance, de promouvoir les droits humains ou de trouver les bons mots —</span>
+    <span class="uk">Незалежно від того, чи потрібно вам відновити довіру, просувати права людини чи знайти потрібні слова —</span>
+  </h2>
+  <p class="services-hook en">here is how The Dignity Practice works with you.</p>
+  <p class="services-hook sv">så här arbetar The Dignity Practice med dig.</p>
+  <p class="services-hook fr">voici comment The Dignity Practice travaille avec vous.</p>
+  <p class="services-hook uk">ось як The Dignity Practice працює з вами.</p>
+
+  <div class="tabs-nav">
+    <button class="tab-btn active" onclick="switchTab('orgs',this)">
+      <span class="en">Organizations & Teams</span>
+      <span class="sv">Organisationer & Team</span>
+      <span class="fr">Organisations & Équipes</span>
+      <span class="uk">Організації та Команди</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('hr',this)">
+      <span class="en">Human Rights & Policy</span>
+      <span class="sv">Mänskliga Rättigheter & Policy</span>
+      <span class="fr">Droits Humains & Politique</span>
+      <span class="uk">Права Людини та Політика</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('writing',this)">
+      <span class="en">Writing & Speaking</span>
+      <span class="sv">Skrivande & Tal</span>
+      <span class="fr">Écriture & Prise de Parole</span>
+      <span class="uk">Писання та Виступи</span>
+    </button>
+  </div>
+
+  <div class="tab-panel active" id="tab-orgs">
+    <div>
+      <h3 class="tab-title en">Building cultures where people actually want to show up</h3>
+      <h3 class="tab-title sv">Bygga kulturer där människor faktiskt vill vara</h3>
+      <h3 class="tab-title fr">Construire des cultures où les gens veulent vraiment être présents</h3>
+      <h3 class="tab-title uk">Будування культур, де люди справді хочуть бути присутніми</h3>
+      <p class="tab-body en">For teams navigating disruption, conflict, or cultural breakdown. Through structured listening, nonviolent communication, and human rights frameworks, we help organizations become more alive — with staff who are loyal, energized, and proud of where they work.</p>
+      <p class="tab-body sv">För team som navigerar störningar, konflikter eller kulturell nedbrytning. Genom strukturerat lyssnande, ickevåldslig kommunikation och ramverk för mänskliga rättigheter hjälper vi organisationer att bli mer levande.</p>
+      <p class="tab-body fr">Pour les équipes qui naviguent dans des perturbations, des conflits ou une rupture culturelle. À travers l'écoute structurée, la communication non-violente et les cadres des droits humains.</p>
+      <p class="tab-body uk">Для команд, які долають потрясіння, конфлікти або культурний розрив. Через структуроване слухання, ненасильницьку комунікацію та рамки прав людини.</p>
+      <p class="tab-body en">Genuine social sustainability is not a report to file. It is a culture to build — and that work starts with listening to the people inside it.</p>
+      <p class="tab-body sv">Äkta social hållbarhet är inte en rapport att lämna in. Det är en kultur att bygga.</p>
+      <p class="tab-body fr">La durabilité sociale authentique n'est pas un rapport à déposer. C'est une culture à construire.</p>
+      <p class="tab-body uk">Справжня соціальна сталість — це не звіт. Це культура для побудови.</p>
+      <span class="tab-engage en">Engage us when your team is losing trust, purpose, or each other.</span>
+      <span class="tab-engage sv">Ta kontakt när ditt team förlorar förtroende, syfte eller varandra.</span>
+      <span class="tab-engage fr">Faites appel à nous quand votre équipe perd confiance, objectif ou cohésion.</span>
+      <span class="tab-engage uk">Звертайтесь, коли ваша команда втрачає довіру, мету або єдність.</span>
+      <a href="#contact" class="btn-primary">
+        <span class="en">Book a workshop</span>
+        <span class="sv">Boka en workshop</span>
+        <span class="fr">Réserver un atelier</span>
+        <span class="uk">Замовити воркшоп</span>
+      </a>
+    </div>
+    <div class="deliverables">
+      <div class="deliverable"><div class="deliverable-title en">Leadership Development</div><div class="deliverable-title sv">Ledarskapsutveckling</div><div class="deliverable-title fr">Développement du Leadership</div><div class="deliverable-title uk">Розвиток Лідерства</div><div class="deliverable-desc en">Coaching and facilitation for leaders who want to lead with dignity, not just authority.</div><div class="deliverable-desc sv">Coachning och facilitering för ledare som vill leda med värdighet.</div><div class="deliverable-desc fr">Coaching et facilitation pour les leaders qui veulent diriger avec dignité.</div><div class="deliverable-desc uk">Коучинг і фасилітація для лідерів, які хочуть керувати з гідністю.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Trust & Culture Workshops</div><div class="deliverable-title sv">Förtroende & Kulturworkshops</div><div class="deliverable-title fr">Ateliers Confiance & Culture</div><div class="deliverable-title uk">Воркшопи з Довіри та Культури</div><div class="deliverable-desc en">Half-day or full-day sessions using NVC and human rights frameworks.</div><div class="deliverable-desc sv">Halv- eller heldagssessioner med NVC och rättighetsramverk.</div><div class="deliverable-desc fr">Sessions d'une demi-journée ou d'une journée complète.</div><div class="deliverable-desc uk">Сесії на півдня або повний день.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Organizational Listening Sessions</div><div class="deliverable-title sv">Organisatoriska lyssningssessioner</div><div class="deliverable-title fr">Sessions d'Écoute Organisationnelle</div><div class="deliverable-title uk">Сесії Організаційного Слухання</div><div class="deliverable-desc en">Structured processes that surface what staff actually need.</div><div class="deliverable-desc sv">Strukturerade processer som synliggör vad personalen faktiskt behöver.</div><div class="deliverable-desc fr">Processus structurés pour révéler ce dont le personnel a besoin.</div><div class="deliverable-desc uk">Структуровані процеси для виявлення справжніх потреб персоналу.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Advisory Retainer</div><div class="deliverable-title sv">Rådgivande Retainer</div><div class="deliverable-title fr">Conseil en Retainer</div><div class="deliverable-title uk">Постійне Консультування</div><div class="deliverable-desc en">Ongoing monthly advisory for organizations in transition.</div><div class="deliverable-desc sv">Löpande månadsvis rådgivning för organisationer i förändring.</div><div class="deliverable-desc fr">Conseil mensuel continu pour les organisations en transition.</div><div class="deliverable-desc uk">Щомісячне консультування для організацій у перехідний період.</div></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-hr">
+    <div>
+      <h3 class="tab-title en">Human rights expertise, delivered where it matters</h3>
+      <h3 class="tab-title sv">Expertis inom mänskliga rättigheter, levererad där det spelar roll</h3>
+      <h3 class="tab-title fr">Expertise en droits humains, là où ça compte</h3>
+      <h3 class="tab-title uk">Експертиза з прав людини там, де це важливо</h3>
+      <p class="tab-body en">Advisory, training, and consultancy on human rights frameworks, international humanitarian law, anti-corruption, and rule of law. Particular depth in Ukraine, EU accession processes, and children's rights.</p>
+      <p class="tab-body sv">Rådgivning, utbildning och konsultation inom ramverk för mänskliga rättigheter, internationell humanitär rätt, antikorruption och rättsstaten.</p>
+      <p class="tab-body fr">Conseil, formation et consultance sur les cadres des droits humains, le droit international humanitaire, la lutte anticorruption et l'état de droit.</p>
+      <p class="tab-body uk">Консультування, навчання та консалтинг щодо рамок прав людини, міжнародного гуманітарного права, антикорупції та верховенства права.</p>
+      <p class="tab-body en">In 2024, Louise advised the Kharkiv National Air Force on IHL application while co-developing a 15 ECTS university course — at a time when the country was at war. That is the kind of work we do.</p>
+      <p class="tab-body sv">År 2024 rådgav Louise Charkivs nationella flygvapen om tillämpning av internationell humanitär rätt — medan landet befann sig i krig.</p>
+      <p class="tab-body fr">En 2024, Louise a conseillé la Force aérienne nationale de Kharkiv sur l'application du DIH — pendant que le pays était en guerre.</p>
+      <p class="tab-body uk">У 2024 році Луїза консультувала Харківський національний авіаційний університет з питань МГП — поки країна перебувала у стані війни.</p>
+      <span class="tab-engage en">Engage us when you need expert knowledge delivered with clarity and credibility.</span>
+      <span class="tab-engage sv">Ta kontakt när du behöver expertkompetens med klarhet och trovärdighet.</span>
+      <span class="tab-engage fr">Faites appel à nous quand vous avez besoin d'expertise avec clarté et crédibilité.</span>
+      <span class="tab-engage uk">Звертайтесь, коли вам потрібні експертні знання з ясністю та достовірністю.</span>
+      <a href="#contact" class="btn-primary">
+        <span class="en">Get in touch</span>
+        <span class="sv">Kontakta oss</span>
+        <span class="fr">Nous contacter</span>
+        <span class="uk">Зв'язатися</span>
+      </a>
+    </div>
+    <div class="deliverables">
+      <div class="deliverable"><div class="deliverable-title en">Human Rights Consultancy</div><div class="deliverable-title sv">Konsultation inom Mänskliga Rättigheter</div><div class="deliverable-title fr">Conseil en Droits Humains</div><div class="deliverable-title uk">Консалтинг з Прав Людини</div><div class="deliverable-desc en">Project-based advisory on HR frameworks, IHL, anti-corruption, and rule of law.</div><div class="deliverable-desc sv">Projektbaserad rådgivning om ramverk, IHL, antikorruption och rättsstaten.</div><div class="deliverable-desc fr">Conseil sur les cadres des droits humains, le DIH, l'anticorruption.</div><div class="deliverable-desc uk">Проектне консультування щодо прав людини, МГП, антикорупції.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Ukraine & EU Accession</div><div class="deliverable-title sv">Ukraina & EU-anslutning</div><div class="deliverable-title fr">Ukraine & Adhésion à l'UE</div><div class="deliverable-title uk">Україна та Вступ до ЄС</div><div class="deliverable-desc en">Expertise in Chapter 23, civil society engagement, and justice sector reform.</div><div class="deliverable-desc sv">Expertis inom kapitel 23, civilsamhälle och rättsreform.</div><div class="deliverable-desc fr">Expertise dans le Chapitre 23, la société civile et la réforme judiciaire.</div><div class="deliverable-desc uk">Експертиза з Розділу 23, громадянського суспільства та судової реформи.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Training Design & Delivery</div><div class="deliverable-title sv">Utbildningsdesign & Leverans</div><div class="deliverable-title fr">Conception & Délivrance de Formation</div><div class="deliverable-title uk">Розробка та Проведення Навчань</div><div class="deliverable-desc en">Custom programmes for civil society, justice sector, and institutional partners.</div><div class="deliverable-desc sv">Skräddarsydda program för civilsamhälle och rättsliga partners.</div><div class="deliverable-desc fr">Programmes sur mesure pour la société civile et les partenaires institutionnels.</div><div class="deliverable-desc uk">Програми для громадянського суспільства та інституційних партнерів.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Children's Rights</div><div class="deliverable-title sv">Barnets Rättigheter</div><div class="deliverable-title fr">Droits de l'Enfant</div><div class="deliverable-title uk">Права Дітей</div><div class="deliverable-desc en">Advisory and programme support on child rights, protection, and education in conflict.</div><div class="deliverable-desc sv">Rådgivning om barnets rättigheter, skydd och utbildning i konflikt.</div><div class="deliverable-desc fr">Conseil sur les droits de l'enfant, la protection et l'éducation en conflit.</div><div class="deliverable-desc uk">Консультування щодо прав дитини, захисту та освіти в умовах конфлікту.</div></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-writing">
+    <div>
+      <h3 class="tab-title en">Authoritative voices on dignity, rights, and hope</h3>
+      <h3 class="tab-title sv">Auktoritativa röster om värdighet, rättigheter och hopp</h3>
+      <h3 class="tab-title fr">Des voix d'autorité sur la dignité, les droits et l'espoir</h3>
+      <h3 class="tab-title uk">Авторитетні голоси про гідність, права та надію</h3>
+      <p class="tab-body en">Policy briefs, articles, and op-eds for organizations and publications that need clear, credible writing on human rights and dignity. Keynotes and conference presentations. Teaching in academic and professional settings.</p>
+      <p class="tab-body sv">Policydokument, artiklar och debattinlägg för organisationer som behöver tydligt, trovärdigt skrivande. Keynotes och konferenspresentationer.</p>
+      <p class="tab-body fr">Notes de politique, articles et éditoriaux pour les organisations qui ont besoin d'une écriture claire et crédible. Conférences et présentations.</p>
+      <p class="tab-body uk">Аналітичні записки, статті та коментарі для організацій, яким потрібне чітке письмо. Кейноути та конференційні виступи.</p>
+      <span class="tab-engage en">Engage us when you need your work written, spoken, or taught well.</span>
+      <span class="tab-engage sv">Ta kontakt när du behöver ditt arbete skrivet, talat eller undervisat väl.</span>
+      <span class="tab-engage fr">Faites appel à nous quand vous avez besoin que votre travail soit bien écrit, parlé ou enseigné.</span>
+      <span class="tab-engage uk">Звертайтесь, коли вам потрібно, щоб ваша робота була добре написана, виголошена або викладена.</span>
+      <a href="#contact" class="btn-primary">
+        <span class="en">Book a lecture</span>
+        <span class="sv">Boka en föreläsning</span>
+        <span class="fr">Réserver une conférence</span>
+        <span class="uk">Замовити лекцію</span>
+      </a>
+    </div>
+    <div class="deliverables">
+      <div class="deliverable"><div class="deliverable-title en">Keynotes & Conference Speaking</div><div class="deliverable-title sv">Keynotes & Konferenstal</div><div class="deliverable-title fr">Conférences Principales</div><div class="deliverable-title uk">Кейноути та Конференційні Виступи</div><div class="deliverable-desc en">Presentations on human rights, dignity, hope-based leadership, and organizational culture.</div><div class="deliverable-desc sv">Presentationer om mänskliga rättigheter, värdighet och organisationskultur.</div><div class="deliverable-desc fr">Présentations sur les droits humains, la dignité et la culture organisationnelle.</div><div class="deliverable-desc uk">Презентації з прав людини, гідності та організаційної культури.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Policy Briefs & Reports</div><div class="deliverable-title sv">Policydokument & Rapporter</div><div class="deliverable-title fr">Notes de Politique & Rapports</div><div class="deliverable-title uk">Аналітичні Записки та Звіти</div><div class="deliverable-desc en">Research-grounded writing for NGOs, civil society, and institutional clients.</div><div class="deliverable-desc sv">Forskningsbaserat skrivande för NGOs och institutionella klienter.</div><div class="deliverable-desc fr">Écriture fondée sur la recherche pour les ONG et clients institutionnels.</div><div class="deliverable-desc uk">Дослідницьке письмо для НГО та інституційних клієнтів.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">Articles & Op-Eds</div><div class="deliverable-title sv">Artiklar & Debattinlägg</div><div class="deliverable-title fr">Articles & Éditoriaux</div><div class="deliverable-title uk">Статті та Коментарі</div><div class="deliverable-desc en">Thought leadership pieces for publications and organizational communications.</div><div class="deliverable-desc sv">Tankeledarskapstexter för publikationer och organisationskommunikation.</div><div class="deliverable-desc fr">Articles de leadership intellectuel pour les publications.</div><div class="deliverable-desc uk">Матеріали лідерства думки для публікацій та організаційних комунікацій.</div></div>
+      <div class="deliverable"><div class="deliverable-title en">University & Professional Teaching</div><div class="deliverable-title sv">Universitets- & Professionell Undervisning</div><div class="deliverable-title fr">Enseignement Universitaire & Professionnel</div><div class="deliverable-title uk">Університетське та Професійне Навчання</div><div class="deliverable-desc en">Guest lectures, seminars, and course collaboration in human rights and related fields.</div><div class="deliverable-desc sv">Gästföreläsningar, seminarier och kurssamarbete inom mänskliga rättigheter.</div><div class="deliverable-desc fr">Conférences invitées, séminaires et collaboration de cours.</div><div class="deliverable-desc uk">Гостьові лекції, семінари та співпраця у курсах.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING PHOTO -->
+<div class="photo-speaking">
+  <img src="photo_speaking.jpg" alt="Louise Cuvillier speaking at a conference" onerror="this.style.display='none'">
+  <div class="photo-speaking-overlay">
+    <p class="photo-speaking-text">
+      <span class="en">"We are a <strong>hope-based authority</strong>. We bring rigour without rigidity, and clarity without despair."</span>
+      <span class="sv">"Vi är en <strong>hoppbaserad auktoritet</strong>. Vi ger stringens utan stelhet och klarhet utan förtvivlan."</span>
+      <span class="fr">"Nous sommes une <strong>autorité fondée sur l'espoir</strong>. Nous apportons rigueur sans rigidité, et clarté sans désespoir."</span>
+      <span class="uk">"Ми є <strong>авторитетом, заснованим на надії</strong>. Ми приносимо строгість без жорсткості та ясність без відчаю."</span>
+    </p>
+  </div>
+</div>
+
+<!-- MID CTA -->
+<div class="mid-cta">
+  <p class="mid-cta-text">
+    <span class="en">Not sure which service fits? <strong>The first conversation is always a conversation, never a pitch.</strong></span>
+    <span class="sv">Inte säker på vilken tjänst som passar? <strong>Det första samtalet är alltid ett samtal, aldrig en säljpitch.</strong></span>
+    <span class="fr">Pas sûr du service qui convient? <strong>La première conversation est toujours une conversation, jamais un argumentaire.</strong></span>
+    <span class="uk">Не впевнені, який сервіс підходить? <strong>Перша розмова — завжди розмова, ніколи не презентація.</strong></span>
+  </p>
+  <a href="#contact" class="btn-blue">
+    <span class="en">Reach out →</span>
+    <span class="sv">Kontakta oss →</span>
+    <span class="fr">Nous écrire →</span>
+    <span class="uk">Написати нам →</span>
+  </a>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div>
+    <img class="about-photo" src="photo_profile.jpg" alt="Louise Cuvillier" onerror="this.style.display='none';this.parentElement.style.background='var(--cream-dark)';this.parentElement.style.minHeight='400px'">
+  </div>
+  <div>
+    <p class="section-label">
+      <span class="en">About</span><span class="sv">Om</span><span class="fr">À propos</span><span class="uk">Про нас</span>
+    </p>
+    <h2 class="section-title">
+      <span class="en">A practitioner,<br>not a theorist.</span>
+      <span class="sv">En praktiker,<br>inte en teoretiker.</span>
+      <span class="fr">Une praticienne,<br>pas une théoricienne.</span>
+      <span class="uk">Практик,<br>не теоретик.</span>
+    </h2>
+    <p class="about-body en">Louise Cuvillier has spent eleven years working at the intersection of human rights, conflict, and organizational change — not from a distance, but from inside the rooms where decisions are made and lives are affected.</p>
+    <p class="about-body sv">Louise Cuvillier har tillbringat elva år i skärningspunkten mellan mänskliga rättigheter, konflikt och organisationsförändring — inte på distans, utan inifrån rummen där beslut fattas.</p>
+    <p class="about-body fr">Louise Cuvillier a passé onze ans à l'intersection des droits humains, des conflits et du changement organisationnel — pas à distance, mais depuis l'intérieur des pièces où les décisions se prennent.</p>
+    <p class="about-body uk">Луїза Кювільє провела одинадцять років на перетині прав людини, конфліктів та організаційних змін — не здалеку, а всередині кімнат, де приймаються рішення.</p>
+    <p class="about-body en">She brings the rare combination of academic depth, field experience, and the ability to make complex ideas accessible to the people who need to act on them.</p>
+    <p class="about-body sv">Hon kombinerar akademiskt djup, fälterfarenhet och förmågan att göra komplexa idéer tillgängliga för dem som behöver agera på dem.</p>
+    <p class="about-body fr">Elle apporte la rare combinaison de profondeur académique, d'expérience de terrain et de la capacité à rendre les idées complexes accessibles.</p>
+    <p class="about-body uk">Вона поєднує академічну глибину, польовий досвід та здатність зробити складні ідеї доступними для тих, хто має на них реагувати.</p>
+    <div class="credentials">
+      <div class="credential"><div class="credential-dot"></div><p class="credential-text"><strong>Centre for Civil Liberties, Kyiv</strong> — <span class="en">Human Rights Advocacy Coordinator. Nobel Peace Prize 2022.</span><span class="sv">Koordinator för mänskliga rättigheter. Nobels fredspris 2022.</span><span class="fr">Coordinatrice de plaidoyer pour les droits humains. Prix Nobel de la Paix 2022.</span><span class="uk">Координатор з правозахисту. Нобелівська премія миру 2022.</span></p></div>
+      <div class="credential"><div class="credential-dot"></div><p class="credential-text"><strong>Doing Good Association</strong> — <span class="en">Head of Operations, EU-funded Ukraine integration programmes. €2.7M portfolio.</span><span class="sv">Operationschef, EU-finansierade ukrainska integrationsprogram. 2,7 miljoner euro.</span><span class="fr">Directrice des Opérations, programmes d'intégration ukrainiens financés par l'UE. 2,7M€.</span><span class="uk">Директор з операцій, програми інтеграції України, фінансовані ЄС. €2,7 млн.</span></p></div>
+      <div class="credential"><div class="credential-dot"></div><p class="credential-text"><strong>Kharkiv National Air Force</strong> — <span class="en">IHL adviser; co-developed 15 ECTS course in international humanitarian law.</span><span class="sv">IHL-rådgivare; medut vecklade 15 ECTS-kurs i internationell humanitär rätt.</span><span class="fr">Conseillère en DIH ; co-développé un cours de 15 ECTS en droit international humanitaire.</span><span class="uk">Радник з МГП; співрозробник курсу 15 ECTS з міжнародного гуманітарного права.</span></p></div>
+      <div class="credential"><div class="credential-dot"></div><p class="credential-text"><strong>UN Committee Against Torture, Geneva</strong> — <span class="en">Campaign management for Ukraine's submission.</span><span class="sv">Kampanjledning för Ukrainas inlaga.</span><span class="fr">Gestion de campagne pour la soumission de l'Ukraine.</span><span class="uk">Управління кампанією для подання України.</span></p></div>
+      <div class="credential"><div class="credential-dot"></div><p class="credential-text"><strong>University of Gothenburg</strong> — <span class="en">Master in Human Rights & Bachelor in International Relations.</span><span class="sv">Master i mänskliga rättigheter & kandidat i internationella relationer.</span><span class="fr">Master en droits humains & licence en relations internationales.</span><span class="uk">Магістр з прав людини та бакалавр міжнародних відносин.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL PLACEHOLDER -->
+<div class="testimonial">
+  <blockquote class="testimonial-quote">
+    <span class="en">"Louise brings both the depth of an academic and the urgency of someone who has been in the field. Her work changes how organizations think about their responsibility to the people inside them."</span>
+    <span class="sv">"Louise kombinerar akademisk djup med fältets brådskande verklighet. Hennes arbete förändrar hur organisationer tänker på sitt ansvar."</span>
+    <span class="fr">"Louise apporte à la fois la profondeur d'une universitaire et l'urgence de quelqu'un qui a été sur le terrain."</span>
+    <span class="uk">"Луїза поєднує академічну глибину з польовою терміновістю. Її робота змінює те, як організації думають про свою відповідальність."</span>
+  </blockquote>
+  <p class="testimonial-attr">
+    <span class="en">— Partner organization, Gothenburg 2024</span>
+    <span class="sv">— Partnerorganisation, Göteborg 2024</span>
+    <span class="fr">— Organisation partenaire, Göteborg 2024</span>
+    <span class="uk">— Партнерська організація, Ґетеборг 2024</span>
+  </p>
+</div>
+
+<!-- WORKSHOP PHOTO -->
+<div class="photo-workshop">
+  <img src="photo_workshop.jpg" alt="Workshop with Ukrainian participants" onerror="this.style.display='none'">
+  <div class="photo-workshop-caption">
+    <span class="en">Training workshop with Ukrainian civil society participants, Gothenburg</span>
+    <span class="sv">Utbildningsworkshop med ukrainska civilsamhällsdeltagare, Göteborg</span>
+    <span class="fr">Atelier de formation avec des participants de la société civile ukrainienne, Göteborg</span>
+    <span class="uk">Навчальний воркшоп з учасниками українського громадянського суспільства, Ґетеборг</span>
+  </div>
+</div>
+
+<!-- OCHRE ACCENT BAND -->
+<div class="ochre-band">
+  <p class="ochre-band-text">
+    <span class="en">"Organizations are responsible for the souls they employ. <strong>Soul care</strong> is not a wellness programme. It is a leadership commitment."</span>
+    <span class="sv">"Organisationer är ansvariga för de själar de anställer. <strong>Själsvård</strong> är inte ett välbefinnandeprogram. Det är ett ledarskapsåtagande."</span>
+    <span class="fr">"Les organisations sont responsables des âmes qu'elles emploient. <strong>Le soin de l'âme</strong> n'est pas un programme de bien-être. C'est un engagement de leadership."</span>
+    <span class="uk">"Організації несуть відповідальність за душі, які вони наймають. <strong>Турбота про душу</strong> — це не програма добробуту. Це зобов'язання лідерства."</span>
+  </p>
+</div>
+
+<!-- WRITING -->
+<section class="writing" id="writing">
+  <div class="writing-inner">
+    <div>
+      <p class="section-label">
+        <span class="en">From The Dignity Practice</span>
+        <span class="sv">Från The Dignity Practice</span>
+        <span class="fr">De The Dignity Practice</span>
+        <span class="uk">Від The Dignity Practice</span>
+      </p>
+      <h2 class="section-title">
+        <span class="en">Thinking publicly<br>about dignity<br>and hope.</span>
+        <span class="sv">Tänker offentligt<br>om värdighet<br>och hopp.</span>
+        <span class="fr">Penser publiquement<br>sur la dignité<br>et l'espoir.</span>
+        <span class="uk">Думати публічно<br>про гідність<br>та надію.</span>
+      </h2>
+      <p style="font-size:1rem;color:var(--brown-mid);line-height:1.9;margin-bottom:2rem;" class="en">The Dignity Practice is Louise's Substack — honest, hope-based writing on human rights, leadership, and what it means to live and work with integrity. Published every two weeks.</p>
+      <p style="font-size:1rem;color:var(--brown-mid);line-height:1.9;margin-bottom:2rem;" class="sv">The Dignity Practice är Louises Substack — ärligt, hoppbaserat skrivande om mänskliga rättigheter, ledarskap och integritet. Publiceras varannan vecka.</p>
+      <p style="font-size:1rem;color:var(--brown-mid);line-height:1.9;margin-bottom:2rem;" class="fr">The Dignity Practice est le Substack de Louise — une écriture honnête et fondée sur l'espoir sur les droits humains et le leadership. Publié toutes les deux semaines.</p>
+      <p style="font-size:1rem;color:var(--brown-mid);line-height:1.9;margin-bottom:2rem;" class="uk">The Dignity Practice — це Substack Луїзи: чесне письмо про права людини, лідерство та інтегрітет. Виходить кожні два тижні.</p>
+      <a href="https://thedignitypractive.substack.com" target="_blank" class="btn-blue">
+        <span class="en">Read on Substack →</span>
+        <span class="sv">Läs på Substack →</span>
+        <span class="fr">Lire sur Substack →</span>
+        <span class="uk">Читати на Substack →</span>
+      </a>
+    </div>
+    <div class="post-card">
+      <p class="post-label"><span class="en">Latest essay</span><span class="sv">Senaste essä</span><span class="fr">Dernier essai</span><span class="uk">Остання есе</span></p>
+      <h3 class="post-title">
+        <span class="en">On loneliness, and why I'm here</span>
+        <span class="sv">Om ensamhet, och varför jag är här</span>
+        <span class="fr">Sur la solitude, et pourquoi je suis ici</span>
+        <span class="uk">Про самотність, і чому я тут</span>
+      </h3>
+      <p class="post-excerpt en">I have a child on my hip almost constantly. Small hands, warm weight, complete dependence. I am never technically alone. And yet I have been feeling profoundly lonely. I think a lot of us are. We just don't say it plainly...</p>
+      <p class="post-excerpt sv">Jag har ett barn på höften nästan konstant. Små händer, varm tyngd, fullständigt beroende. Jag är aldrig tekniskt ensam. Och ändå har jag känt mig djupt ensam...</p>
+      <p class="post-excerpt fr">J'ai un enfant sur la hanche presque constamment. Petites mains, poids chaud, dépendance totale. Je ne suis jamais techniquement seule. Et pourtant je me suis sentie profondément seule...</p>
+      <p class="post-excerpt uk">Я майже постійно тримаю дитину на руці. Маленькі руки, тепла вага, повна залежність. Технічно я ніколи не самотня. І все ж я відчувала глибоку самотність...</p>
+      <a href="https://thedignitypractive.substack.com" target="_blank" class="post-link">
+        <span class="en">Read the full essay →</span>
+        <span class="sv">Läs hela essän →</span>
+        <span class="fr">Lire l'essai complet →</span>
+        <span class="uk">Читати повну есе →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <p class="section-label">
+    <span class="en">How we work</span><span class="sv">Hur vi arbetar</span><span class="fr">Comment nous travaillons</span><span class="uk">Як ми працюємо</span>
+  </p>
+  <h2 class="section-title">
+    <span class="en">The Dignity Practice approach</span>
+    <span class="sv">The Dignity Practice metod</span>
+    <span class="fr">L'approche de The Dignity Practice</span>
+    <span class="uk">Підхід The Dignity Practice</span>
+  </h2>
+  <div class="approach-grid">
+    <div class="approach-item">
+      <div class="approach-num">I</div>
+      <h3 class="approach-title"><span class="en">Listen first, always</span><span class="sv">Lyssna först, alltid</span><span class="fr">Écouter d'abord, toujours</span><span class="uk">Спочатку слухати, завжди</span></h3>
+      <p class="approach-body en">Every engagement begins with genuine listening. Not a needs assessment form — a real conversation about what is actually happening.</p>
+      <p class="approach-body sv">Varje uppdrag börjar med äkta lyssnande. Inte ett behovsbedömningsformulär — ett verkligt samtal.</p>
+      <p class="approach-body fr">Chaque engagement commence par une écoute authentique. Pas un formulaire — une vraie conversation.</p>
+      <p class="approach-body uk">Кожне залучення починається з щирого слухання. Не форма оцінки потреб — справжня розмова.</p>
+    </div>
+    <div class="approach-item">
+      <div class="approach-num">II</div>
+      <h3 class="approach-title"><span class="en">Human rights as a living framework</span><span class="sv">Mänskliga rättigheter som ett levande ramverk</span><span class="fr">Les droits humains comme cadre vivant</span><span class="uk">Права людини як живий фреймворк</span></h3>
+      <p class="approach-body en">We don't bring frameworks as compliance tools. We use them as lenses to help organizations see their work through the eyes of those most affected.</p>
+      <p class="approach-body sv">Vi tar inte med ramverk som efterlevnadsverktyg. Vi använder dem som linser.</p>
+      <p class="approach-body fr">Nous n'apportons pas les cadres comme outils de conformité. Nous les utilisons comme des lentilles.</p>
+      <p class="approach-body uk">Ми не приносимо рамки як інструменти відповідності. Ми використовуємо їх як лінзи.</p>
+    </div>
+    <div class="approach-item">
+      <div class="approach-num">III</div>
+      <h3 class="approach-title"><span class="en">Hope without naivety</span><span class="sv">Hopp utan naivitet</span><span class="fr">L'espoir sans naïveté</span><span class="uk">Надія без наївності</span></h3>
+      <p class="approach-body en">We have worked with people whose dignity was taken from them by force. That experience grounds our hope. It is deliberate, evidence-based, non-negotiable.</p>
+      <p class="approach-body sv">Vi har arbetat med människor vars värdighet togs från dem med våld. Det gör vårt hopp förankrat.</p>
+      <p class="approach-body fr">Nous avons travaillé avec des personnes dont la dignité leur a été retirée par la force. Cela ancre notre espoir.</p>
+      <p class="approach-body uk">Ми працювали з людьми, у яких гідність була відібрана силою. Це заземлює нашу надію.</p>
+    </div>
+    <div class="approach-item">
+      <div class="approach-num">IV</div>
+      <h3 class="approach-title"><span class="en">Soul care over self care</span><span class="sv">Själsvård framför egenvård</span><span class="fr">Soin de l'âme plutôt que soin de soi</span><span class="uk">Турбота про душу важливіша за турботу про себе</span></h3>
+      <p class="approach-body en">We advocate for structural conditions that allow people to thrive — not just individual resilience. Organizations are responsible for the souls they employ.</p>
+      <p class="approach-body sv">Vi förespråkar strukturella förhållanden som gör att människor kan blomstra — inte bara individuell motståndskraft.</p>
+      <p class="approach-body fr">Nous préconisons des conditions structurelles qui permettent aux gens de s'épanouir.</p>
+      <p class="approach-body uk">Ми виступаємо за структурні умови, що дозволяють людям процвітати.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <p class="section-label">
+      <span class="en">Get in touch</span><span class="sv">Kontakta oss</span><span class="fr">Nous contacter</span><span class="uk">Зв'язатися</span>
+    </p>
+    <h2 class="contact-title">
+      <span class="en">Let's talk about what<br>we can <em>build together.</em></span>
+      <span class="sv">Låt oss prata om vad<br>vi kan <em>bygga tillsammans.</em></span>
+      <span class="fr">Parlons de ce que<br>nous pouvons <em>construire ensemble.</em></span>
+      <span class="uk">Поговорімо про те, що<br>ми можемо <em>побудувати разом.</em></span>
+    </h2>
+    <p class="contact-body en">Whether you have a specific brief in mind or a sense that something needs to change — reach out. The first conversation is always a conversation, never a pitch.</p>
+    <p class="contact-body sv">Oavsett om du har ett specifikt uppdrag i åtanke eller en känsla av att något behöver förändras — hör av dig.</p>
+    <p class="contact-body fr">Que vous ayez un brief spécifique en tête ou le sentiment que quelque chose doit changer — contactez-nous.</p>
+    <p class="contact-body uk">Незалежно від того, чи є у вас конкретне завдання, або відчуття, що щось потрібно змінити — зв'яжіться з нами.</p>
+    <a href="mailto:lollo.cuvillier@gmail.com" class="btn-white">
+      <span class="en">Send a message</span>
+      <span class="sv">Skicka ett meddelande</span>
+      <span class="fr">Envoyer un message</span>
+      <span class="uk">Надіслати повідомлення</span>
+    </a>
+  </div>
+  <div class="contact-details">
+    <div class="contact-detail-item"><div class="contact-detail-label">Email</div>lollo.cuvillier@gmail.com</div>
+    <div class="contact-detail-item"><div class="contact-detail-label"><span class="en">Phone</span><span class="sv">Telefon</span><span class="fr">Téléphone</span><span class="uk">Телефон</span></div>+46 (0) 70 201 43 12</div>
+    <div class="contact-detail-item"><div class="contact-detail-label"><span class="en">Based in</span><span class="sv">Baserad i</span><span class="fr">Basée à</span><span class="uk">Знаходиться в</span></div>Gothenburg, Sweden</div>
+    <div class="contact-detail-item"><div class="contact-detail-label"><span class="en">Languages</span><span class="sv">Språk</span><span class="fr">Langues</span><span class="uk">Мови</span></div>Swedish · English · French</div>
+    <div class="contact-detail-item"><div class="contact-detail-label"><span class="en">Thought leadership</span><span class="sv">Tankeledarskap</span><span class="fr">Leadership intellectuel</span><span class="uk">Лідерство думки</span></div>The Dignity Practice — Substack</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">The Dignity Practice © 2026 — Louise Cuvillier</div>
+  <div class="footer-links">
+    <a href="#services"><span class="en">Services</span><span class="sv">Tjänster</span><span class="fr">Services</span><span class="uk">Послуги</span></a>
+    <a href="#about"><span class="en">About</span><span class="sv">Om</span><span class="fr">À propos</span><span class="uk">Про нас</span></a>
+    <a href="#writing"><span class="en">Writing</span><span class="sv">Skrivande</span><span class="fr">Écrits</span><span class="uk">Публікації</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="sv">Kontakt</span><span class="fr">Contact</span><span class="uk">Контакт</span></a>
+    <a href="https://thedignitypractive.substack.com" target="_blank">Substack</a>
+  </div>
+</footer>
+
+<script>
+  function switchTab(id,btn){
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.getElementById('tab-'+id).classList.add('active');
+    btn.classList.add('active');
+  }
+  function setLang(lang,btn){
+    document.body.className='lang-'+lang;
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
